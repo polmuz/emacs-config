@@ -10,3 +10,5 @@
 (load "ruby")
 
 (load "yasnippet")
+
+(load "autocomplete")
