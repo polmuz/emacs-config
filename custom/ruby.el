@@ -12,6 +12,9 @@
 (add-to-list 'load-path "~/.emacs.d/custom/ruby")
 (load "ruby-indent")
 
+;; Work around for yasnippet with electric
+(define-key ruby-mode-map (kbd "TAB") nil)
+
 (add-hook 'ruby-mode-hook
           (lambda ()
             (set (make-local-variable 'indent-tabs-mode) 'nil)
