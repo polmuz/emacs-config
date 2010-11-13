@@ -12,3 +12,5 @@
 (load "yasnippet")
 
 (load "autocomplete")
+
+(load "utils")
