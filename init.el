@@ -14,3 +14,5 @@
 (load "autocomplete")
 
 (load "utils")
+
+(load "org-mode")

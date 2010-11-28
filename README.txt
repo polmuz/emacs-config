@@ -4,8 +4,16 @@ emacs-goodies-el
 emacs-goodies-extra-el
 git-core
 
-Instalation:
+Installation:
 After cloning the repository, run this command to fetch some git submodules
 git submodule update --init --recursive
+
+Org-mode:
+I'm using some features from org-mode 7.x so I need to install it manually.
+cd vendor/org-mode
+make
+sudo make install
+
+M-x org-version => 7.x
 
 That's all (I think)
