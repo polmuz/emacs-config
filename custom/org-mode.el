@@ -19,4 +19,9 @@
 	 "* TODO %?\n  %i\n  %a")
         ("j" "Work Journal" entry (file+datetree
 			      "~/orgfiles/work-journal.org")
-	 "* %?\n %U\n  %i\n %a \n")))
+	 "* %?\n %U\n  %i\n\n")
+	("a" "Accomplishments" entry (file
+			      "~/orgfiles/accomplishments.org")
+	 "* %?\n %U\n  %i\n\n")
+	)
+      )
