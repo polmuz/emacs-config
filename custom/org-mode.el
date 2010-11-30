@@ -7,6 +7,8 @@
 (global-set-key "\C-ca" 'org-agenda)
 (global-set-key "\C-cb" 'org-iswitchb)
 
+(setq org-mobile-inbox-for-pull "~/orgfiles/orgmobile-pull-inbox.org")
+
 (setq org-directory "~/orgfiles")
 (setq org-default-notes-file (concat org-directory "/notes.org"))
 
@@ -25,3 +27,10 @@
 	 "* %?\n %U\n  %i\n\n")
 	)
       )
+
+(setq org-mobile-directory "~/orgfiles/orgmobile")
+
+(setq org-mobile-files '("~/orgfiles/work-journal.org"
+			 "~/orgfiles/accomplishments.org"))
+
+
