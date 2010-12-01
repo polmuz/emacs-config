@@ -25,6 +25,9 @@
 	("a" "Accomplishments" entry (file
 			      "~/orgfiles/accomplishments.org")
 	 "* %?\n %U\n  %i\n\n")
+	("c" "Coding notes" entry (file
+			      "~/orgfiles/coding-notes.org")
+	 "* %?\n %U\n  %i\n %a\n")
 	)
       )
 
