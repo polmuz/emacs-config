@@ -7,9 +7,11 @@
 (load "ui-config")
 ;; (load "mode-compile")
 
+(load "yasnippet")
+
 (load "ruby")
 
-(load "yasnippet")
+(load "cucumber")
 
 (load "autocomplete")
 
