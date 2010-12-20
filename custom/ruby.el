@@ -5,6 +5,7 @@
 (setq auto-mode-alist (cons '("Rakefile" . ruby-mode) auto-mode-alist))
 (setq auto-mode-alist (cons '("Capfile" . ruby-mode) auto-mode-alist))
 (setq auto-mode-alist (cons '("\\.rake" . ruby-mode) auto-mode-alist))
+(setq auto-mode-alist (cons '("\\.rjs" . ruby-mode) auto-mode-alist))
 (setq auto-mode-alist (cons '("\\.god" . ruby-mode) auto-mode-alist))
 (setq auto-mode-alist (cons '("\\.ru" . ruby-mode) auto-mode-alist))
 (setq auto-mode-alist (cons '("\\.gemspec" . ruby-mode) auto-mode-alist))
@@ -16,13 +17,13 @@
 (define-key ruby-mode-map (kbd "TAB") nil)
 
 (add-hook 'ruby-mode-hook
-					(lambda ()
-						(set (make-local-variable 'indent-tabs-mode) 'nil)
-						(set (make-local-variable 'tab-width) 2)
-						(define-key
-							ruby-mode-map "\C-j" 'ruby-reindent-then-newline-and-indent)
-						(require 'ruby-electric)
-						(ruby-electric-mode t)))
+	  (lambda ()
+	    (set (make-local-variable 'indent-tabs-mode) 'nil)
+	    (set (make-local-variable 'tab-width) 2)
+	    (define-key
+	      ruby-mode-map "\C-j" 'ruby-reindent-then-newline-and-indent)
+	    (require 'ruby-electric)
+	    (ruby-electric-mode t)))
 
 
 (require 'yaml-mode)
@@ -31,17 +32,17 @@
 (load "flymake-ruby")
 
 (add-hook 'ruby-mode-hook (lambda()
-														(local-set-key (kbd "<f5>") 'find-tag)))
+			    (local-set-key (kbd "<f5>") 'find-tag)))
 
 
 (add-hook 'rinari-minor-mode-hook (lambda()
-																		(set (make-local-variable 'tab-width) 2)
-																		(local-set-key
-																		 (kbd "<f6>") 'rinari-find-model)
-																		(local-set-key
-																		 (kbd "<f7>") 'rinari-find-view)
-																		(local-set-key
-																		 (kbd "<f8>") 'rinari-find-controller)))
+				    (set (make-local-variable 'tab-width) 2)
+				    (local-set-key
+				     (kbd "<f6>") 'rinari-find-model)
+				    (local-set-key
+				     (kbd "<f7>") 'rinari-find-view)
+				    (local-set-key
+				     (kbd "<f8>") 'rinari-find-controller)))
 
 (add-to-list 'load-path "~/.emacs.d/vendor/rhtml")
 (require 'rhtml-mode)
