@@ -31,6 +31,8 @@
 
 (load "flymake-ruby")
 
+(push '(".+\\.rake$" flymake-ruby-init) flymake-allowed-file-name-masks)
+
 (add-hook 'ruby-mode-hook (lambda()
 			    (local-set-key (kbd "<f5>") 'find-tag)))
 

@@ -11,6 +11,8 @@
 
 (load "ruby")
 
+(load "yaml")
+
 (load "cucumber")
 
 (load "autocomplete")
