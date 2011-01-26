@@ -11,12 +11,14 @@
 
 (load "ruby")
 
-(load "yaml")
+;(load "yaml")
 
-(load "cucumber")
+;(load "cucumber")
 
 (load "autocomplete")
 
 (load "utils")
 
 (load "org-mode")
+
+(load "python")
