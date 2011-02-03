@@ -22,3 +22,5 @@
 (load "org-mode")
 
 (load "python")
+
+(load "flymake-conf")
