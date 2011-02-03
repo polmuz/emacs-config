@@ -42,3 +42,9 @@ displayed in the minibuffer (rather than having to mouse over
 it)" 
   (set (make-local-variable 'post-command-hook) 
        (cons 'show-fly-err-at-point post-command-hook)))
+
+
+(custom-set-faces
+ '(flymake-errline ((((class color)) (:background nil :underline "OrangeRed"))))
+ '(flymake-warnline ((((class color)) (:background nil :underline "Yellow"))))
+ '(flymake-infoline ((((class color)) (:background nil :underline "Green")))))
