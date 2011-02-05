@@ -23,4 +23,31 @@
 	    (unless (eq buffer-file-name nil) (flymake-mode 1))
 	    (local-set-key [f9] 'flymake-display-err-menu-for-current-line)
 	    (local-set-key [f10] 'flymake-goto-prev-error)
-	    (local-set-key [f11] 'flymake-goto-next-error)))
+	    (local-set-key [f11] 'flymake-goto-next-error)
+	    (load-ropemacs)
+	    (ropemacs-mode)))
+
+
+;; ;; Pymacs
+;; (autoload 'pymacs-apply "pymacs")
+;; (autoload 'pymacs-call "pymacs")
+;; (autoload 'pymacs-eval "pymacs" nil t)
+;; (autoload 'pymacs-exec "pymacs" nil t)
+;; (autoload 'pymacs-load "pymacs" nil t)
+;; ;;(eval-after-load "pymacs"
+;; ;;  '(add-to-list 'pymacs-load-path YOUR-PYMACS-DIRECTORY"))
+
+(require 'pymacs)
+
+(setq pymacs-load-path '("~/.emacs.d/vendor/ropemacs/"
+			 "~/.emacs.d/vendor/rope/"))
+
+
+(defun load-ropemacs ()
+    "Load pymacs and ropemacs"
+    (pymacs-load "ropemacs" "rope-")
+    ;; Automatically save project python buffers before refactorings
+    (setq ropemacs-confirm-saving 'nil)
+    )
+
+;; (pymacs-load "ropemacs" "rope-")

@@ -16,4 +16,9 @@ sudo make install
 
 M-x org-version => 7.x
 
+Rope for python:
+I need to install pymacs for rope
+cd vendor/pymacs-X
+sudo make install
+
 That's all (I think)
