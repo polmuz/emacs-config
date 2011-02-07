@@ -20,5 +20,6 @@ Rope for python:
 I need to install pymacs for rope
 cd vendor/pymacs-X
 sudo make install
+sudo pip install rope ropemode
 
 That's all (I think)
