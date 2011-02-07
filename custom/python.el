@@ -24,6 +24,7 @@
 	    (local-set-key [f9] 'flymake-display-err-menu-for-current-line)
 	    (local-set-key [f10] 'flymake-goto-prev-error)
 	    (local-set-key [f11] 'flymake-goto-next-error)
+	    (auto-revert-mode)
 	    (load-ropemacs)
 	    (ropemacs-mode)))
 
