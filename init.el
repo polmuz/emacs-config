@@ -26,3 +26,5 @@
 (load "flymake-conf")
 
 (load "javascript")
+
+(load "php")
