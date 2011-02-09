@@ -22,4 +22,7 @@ cd vendor/pymacs-X
 sudo make install
 sudo pip install rope ropemode
 
+js2-mode:
+emacs --batch --eval '(byte-compile-file "js2.el")'
+
 That's all (I think)

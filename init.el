@@ -24,3 +24,5 @@
 (load "python")
 
 (load "flymake-conf")
+
+(load "javascript")
