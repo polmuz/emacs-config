@@ -1,5 +1,6 @@
 ;; plugins
 (add-to-list 'load-path "~/.emacs.d/vendor")
+(add-to-list 'load-path "~/.emacs.d/vendor/python")
 
 ;; customization for different modes
 (add-to-list 'load-path "~/.emacs.d/custom")
@@ -21,7 +22,7 @@
 
 (load "org-mode")
 
-(load "python")
+(load "python-custom")
 
 (load "flymake-conf")
 

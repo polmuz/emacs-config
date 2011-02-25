@@ -1,4 +1,5 @@
-(require 'python-mode)
+(add-to-list 'load-path "~/.emacs/vendor/python/")
+(require 'python)
 (require 'virtualenv)
 
 ;; Flymake support
