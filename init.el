@@ -16,6 +16,8 @@
 
 ;(load "cucumber")
 
+(load "ack")
+
 (load "autocomplete")
 
 (load "utils")

@@ -22,6 +22,13 @@ cd vendor/pymacs-X
 sudo make install
 sudo pip install rope ropemode
 
+Ack:
+Ack is a great replacement for grep.
+You need to install ack.
+If you are using Ubuntu (or Debian I think) you have to install
+the package ack-grep and create a link:
+$ sudo link /usr/bin/ack-grep /usr/bin/ack
+
 js2-mode:
 emacs --batch --eval '(byte-compile-file "js2.el")'
 
