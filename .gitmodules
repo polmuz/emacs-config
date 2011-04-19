@@ -17,3 +17,6 @@
 [submodule "vendor/python"]
 	path = vendor/python
 	url = https://github.com/fgallina/python.el.git
+[submodule "vendor/android"]
+	path = vendor/android
+	url = https://github.com/remvee/android-mode.git

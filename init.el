@@ -31,3 +31,5 @@
 (load "javascript")
 
 (load "php")
+
+(load "android-conf")
