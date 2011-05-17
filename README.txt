@@ -32,4 +32,7 @@ $ sudo link /usr/bin/ack-grep /usr/bin/ack
 js2-mode:
 emacs --batch --eval '(byte-compile-file "js2.el")'
 
+pyflymake:
+sudo pip install pep8 pylint pyflakes
+
 That's all (I think)
