@@ -33,3 +33,5 @@
 (load "php")
 
 (load "android-conf")
+
+(load "django-conf")

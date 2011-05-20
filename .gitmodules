@@ -20,3 +20,6 @@
 [submodule "vendor/android"]
 	path = vendor/android
 	url = https://github.com/remvee/android-mode.git
+[submodule "vendor/django-mode"]
+	path = vendor/django-mode
+	url = https://github.com/myfreeweb/django-mode.git
