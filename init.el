@@ -5,12 +5,12 @@
 ;; customization for different modes
 (add-to-list 'load-path "~/.emacs.d/custom")
 
-(load "ui-config")
+(load "ui-conf")
 ;; (load "mode-compile")
 
-(load "yasnippet")
+(load "yasnippet-conf")
 
-(load "ruby")
+(load "ruby-conf")
 
 ;(load "yaml")
 
@@ -18,19 +18,19 @@
 
 (load "ack")
 
-(load "autocomplete")
+(load "autocomplete-conf")
 
 (load "utils")
 
-(load "org-mode")
+(load "org-mode-conf")
 
-(load "python-custom")
+(load "python-conf")
 
 (load "flymake-conf")
 
-(load "javascript")
+(load "javascript-conf")
 
-(load "php")
+(load "php-conf")
 
 (load "android-conf")
 
