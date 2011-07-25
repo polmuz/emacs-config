@@ -27,7 +27,8 @@
 	    (local-set-key [f11] 'flymake-goto-next-error)
 	    (auto-revert-mode)
 	    (load-ropemacs)
-	    (ropemacs-mode)))
+	    (ropemacs-mode)
+	    (auto-complete-mode)))
 
 
 ;; ;; Pymacs

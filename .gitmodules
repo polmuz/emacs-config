@@ -23,3 +23,6 @@
 [submodule "vendor/django-mode"]
 	path = vendor/django-mode
 	url = https://github.com/myfreeweb/django-mode.git
+[submodule "vendor/pony-mode"]
+	path = vendor/pony-mode
+	url = git://github.com/davidmiller/pony-mode.git
