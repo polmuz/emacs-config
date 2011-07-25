@@ -34,6 +34,4 @@
 
 (load "android-conf")
 
-(load "django-conf")
-
 (load "pony-conf")
