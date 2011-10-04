@@ -2,3 +2,6 @@
 *~
 ac-comphist.dat
 *.pyc
+elpa/
+session.*
+places

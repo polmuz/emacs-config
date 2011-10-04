@@ -1,37 +1,50 @@
-;; plugins
-(add-to-list 'load-path "~/.emacs.d/vendor")
-(add-to-list 'load-path "~/.emacs.d/vendor/python")
+(require 'package)
 
-;; customization for different modes
-(add-to-list 'load-path "~/.emacs.d/custom")
+;; Add the original Emacs Lisp Package Archive
+(add-to-list 'package-archives
+             '("elpa" . "http://tromey.com/elpa/"))
 
-(load "ui-conf")
-;; (load "mode-compile")
+;; Add the user-contributed repository
+(add-to-list 'package-archives
+             '("marmalade" . "http://marmalade-repo.org/packages/"))
 
-(load "yasnippet-conf")
+(package-initialize)
 
-(load "ruby-conf")
+(when (not package-archive-contents)
+  (package-refresh-contents))
 
-;(load "yaml")
+;; Add in your own as you wish:
+(defvar my-packages '(starter-kit
+		      starter-kit-lisp
+		      starter-kit-bindings
+		      starter-kit-ruby
+                      starter-kit-js
+		      starter-kit-eshell
+                      yasnippet-bundle
+                      color-theme
+                      projectile
+                      auto-complete)
+  "A list of packages to ensure are installed at launch.")
 
-;(load "cucumber")
+(dolist (p my-packages)
+  (when (not (package-installed-p p))
+    (package-install p)))
 
-(load "ack")
 
-(load "autocomplete-conf")
+(require 'color-theme)
+(load-file "~/.emacs.d/color-theme-twilight.el")
+(set-face-font 'default "-unknown-DejaVu Sans Mono-normal-normal-normal-*-14-*-*-*-m-0-iso10646-1")
 
-(load "utils")
 
-(load "org-mode-conf")
+;; auto-complete config
+(require 'auto-complete-config)
+(ac-config-default)
 
-(load "python-conf")
+;; CSS autocomplete inifinite loop hack
+(add-to-list 'ac-css-value-classes
+	     '(border-width "thin" "medium" "thick" "inherit"))
 
-(load "flymake-conf")
 
-(load "javascript-conf")
-
-(load "php-conf")
-
-(load "android-conf")
-
-(load "pony-conf")
+;; projectile config
+(require 'projectile)
+(projectile-global-mode)
