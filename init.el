@@ -41,6 +41,7 @@
 (require 'auto-complete-config)
 (ac-config-default)
 
+
 ;; CSS autocomplete inifinite loop hack
 (add-to-list 'ac-css-value-classes
 	     '(border-width "thin" "medium" "thick" "inherit"))
@@ -50,6 +51,8 @@
 (require 'projectile)
 (projectile-global-mode)
 
+
+(global-auto-revert-mode t)
 
 
 (defun move-text-internal (arg)
