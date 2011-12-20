@@ -55,6 +55,10 @@
 (global-auto-revert-mode t)
 
 
+;; JS config
+(setq js-indent-level 4)
+
+
 (defun move-text-internal (arg)
   (cond
    ((and mark-active transient-mark-mode)
