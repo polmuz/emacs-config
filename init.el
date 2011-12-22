@@ -56,7 +56,12 @@
 
 
 ;; JS config
-(setq js-indent-level 4)
+
+(add-hook 'js-mode-hook
+          '(lambda ()
+             (setq js-indent-level 4)
+             )
+          )
 
 
 (defun move-text-internal (arg)
