@@ -24,7 +24,8 @@
                       color-theme
                       projectile
                       auto-complete
-                      markdown-mode)
+                      markdown-mode
+                      feature-mode)
   "A list of packages to ensure are installed at launch.")
 
 (dolist (p my-packages)
@@ -56,10 +57,20 @@
 
 
 ;; JS config
-
 (add-hook 'js-mode-hook
           '(lambda ()
              (setq js-indent-level 4)
+             )
+          )
+
+;; feature-mode config
+(require 'feature-mode)
+
+(add-to-list 'auto-mode-alist '("\.feature$" . feature-mode))
+
+(add-hook 'js-mode-hook
+          '(lambda ()
+             (setq feature-indent-level 4)
              )
           )
 
