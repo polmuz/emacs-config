@@ -25,7 +25,9 @@
                       projectile
                       auto-complete
                       markdown-mode
-                      feature-mode)
+                      feature-mode
+                      clojure-mode
+                      clojurescript-mode)
   "A list of packages to ensure are installed at launch.")
 
 (dolist (p my-packages)
@@ -60,6 +62,7 @@
 (add-hook 'js-mode-hook
           '(lambda ()
              (setq js-indent-level 4)
+             (setq tab-width 4)
              )
           )
 
@@ -68,9 +71,10 @@
 
 (add-to-list 'auto-mode-alist '("\.feature$" . feature-mode))
 
-(add-hook 'js-mode-hook
+(add-hook 'feature-mode-hook
           '(lambda ()
              (setq feature-indent-level 4)
+             
              )
           )
 
