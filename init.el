@@ -27,7 +27,11 @@
                       markdown-mode
                       feature-mode
                       clojure-mode
-                      clojurescript-mode)
+                      clojurescript-mode
+                      flymake-jshint
+                      flymake-cursor
+                      scss-mode
+                      less-css-mode)
   "A list of packages to ensure are installed at launch.")
 
 (dolist (p my-packages)
@@ -38,6 +42,9 @@
 (require 'color-theme)
 (load-file "~/.emacs.d/color-theme-twilight.el")
 (set-face-font 'default "-unknown-DejaVu Sans Mono-normal-normal-normal-*-14-*-*-*-m-0-iso10646-1")
+
+;; flymake global config
+(require 'flymake-cursor)
 
 
 ;; auto-complete config
@@ -66,6 +73,11 @@
              )
           )
 
+(require 'flymake-jshint)
+(add-hook 'js-mode-hook
+     (lambda () (flymake-mode t)))
+
+
 ;; feature-mode config
 (require 'feature-mode)
 
@@ -77,6 +89,9 @@
              
              )
           )
+
+;; path configuration
+(setenv "PATH" (concat "/home/pablo/bin:" (getenv "PATH")))
 
 
 (defun move-text-internal (arg)
