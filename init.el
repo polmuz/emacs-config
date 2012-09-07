@@ -1,5 +1,5 @@
+(require `tramp)
 (require 'package)
-
 ;; Add the original Emacs Lisp Package Archive
 (add-to-list 'package-archives
              '("elpa" . "http://tromey.com/elpa/"))
@@ -30,8 +30,13 @@
                       clojurescript-mode
                       flymake-jshint
                       flymake-cursor
+                      flymake-ruby
                       scss-mode
-                      less-css-mode)
+                      less-css-mode
+                      virtualenv
+                      rinari
+                      rvm
+                      color-theme-sanityinc-tomorrow)
   "A list of packages to ensure are installed at launch.")
 
 (dolist (p my-packages)
@@ -40,12 +45,14 @@
 
 
 (require 'color-theme)
-(load-file "~/.emacs.d/color-theme-twilight.el")
+;; (load-file "~/.emacs.d/color-theme-twilight.el")
+
+(require 'color-theme-sanityinc-tomorrow)
+(color-theme-sanityinc-tomorrow-eighties)
 (set-face-font 'default "-unknown-DejaVu Sans Mono-normal-normal-normal-*-14-*-*-*-m-0-iso10646-1")
 
 ;; flymake global config
 (require 'flymake-cursor)
-
 
 ;; auto-complete config
 (require 'auto-complete-config)
@@ -68,7 +75,7 @@
 ;; JS config
 (add-hook 'js-mode-hook
           '(lambda ()
-             (setq js-indent-level 4)
+             (setq js-indent-level 2)
              (setq tab-width 4)
              )
           )
@@ -77,6 +84,9 @@
 (add-hook 'js-mode-hook
      (lambda () (flymake-mode t)))
 
+;; Ruby config
+(require 'flymake-ruby)
+(add-hook 'ruby-mode-hook 'flymake-ruby-load)
 
 ;; feature-mode config
 (require 'feature-mode)
