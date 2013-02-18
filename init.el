@@ -49,7 +49,7 @@
 
 (require 'color-theme-sanityinc-tomorrow)
 (color-theme-sanityinc-tomorrow-eighties)
-(set-face-font 'default "-unknown-DejaVu Sans Mono-normal-normal-normal-*-14-*-*-*-m-0-iso10646-1")
+;; (set-face-font 'default "-unknown-DejaVu Sans Mono-normal-normal-normal-*-14-*-*-*-m-0-iso10646-1")
 
 ;; flymake global config
 (require 'flymake-cursor)
@@ -97,9 +97,18 @@
              )
           )
 
+
+
 (require 'flymake-jshint)
 (add-hook 'js-mode-hook
      (lambda () (flymake-mode t)))
+
+;; Less Config
+(add-hook 'less-css-mode-hook
+          '(lambda ()
+             (setq css-indent-offset 2)
+             )
+          )
 
 ;; Ruby config
 (require 'flymake-ruby)
