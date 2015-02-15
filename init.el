@@ -8,7 +8,9 @@
 (add-to-list 'package-archives
              '("marmalade" . "http://marmalade-repo.org/packages/"))
 
-(package-initialize)
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.org/packages/") t)
+
 
 (when (not package-archive-contents)
   (package-refresh-contents))
@@ -23,7 +25,13 @@
                       yasnippet-bundle
                       color-theme
                       projectile
+                      helm
+                      helm-projectile
                       auto-complete
+                      emmet-mode
+                      ac-emmet
+                      expand-region
+                      jedi
                       markdown-mode
                       feature-mode
                       clojure-mode
@@ -33,8 +41,9 @@
                       flymake-ruby
                       scss-mode
                       less-css-mode
+                      web-mode
                       virtualenv
-                      rinari
+                      ;; rinari
                       rvm
                       color-theme-sanityinc-tomorrow)
   "A list of packages to ensure are installed at launch.")
@@ -58,16 +67,44 @@
 (require 'auto-complete-config)
 (ac-config-default)
 
+;; expand-region config
+(require 'expand-region)
+(global-set-key (kbd "C-=") 'er/expand-region)
+
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 ;; CSS autocomplete inifinite loop hack
 (add-to-list 'ac-css-value-classes
 	     '(border-width "thin" "medium" "thick" "inherit"))
 
+;; emmet config
+;; remove bind for expand line to C-j used for newline
+(define-key emmet-mode-keymap (kbd "C-j") nil)
+(define-key emmet-mode-keymap (kbd "C-i") 'emmet-expand-line)
+
+;; Webmode config
+(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+(setq web-mode-markup-indent-offset 2)
+(setq web-mode-css-indent-offset 2)
+(setq web-mode-code-indent-offset 2)
+(setq web-mode-ac-sources-alist
+  '(("css" . (ac-source-css-property))
+    ("html" . (ac-source-words-in-buffer ac-source-abbrev))))
+
+(setq web-mode-engines-alist
+      '(("django"    . "\\.html\\'"))
+)
+
 
 ;; projectile config
 (require 'projectile)
 (projectile-global-mode)
+;; Dangerous
+;; (setq projectile-enable-caching t)
 
+;; helm config
+(require 'helm-config)
+(global-set-key (kbd "C-c h") 'helm-projectile)
 
 (global-auto-revert-mode t)
 
@@ -103,12 +140,10 @@
 (add-hook 'js-mode-hook
      (lambda () (flymake-mode t)))
 
-;; Less Config
-(add-hook 'less-css-mode-hook
-          '(lambda ()
-             (setq css-indent-offset 2)
-             )
-          )
+;; css/less Config
+(add-hook 'less-css-mode
+          '(lambda () (setq css-indent-offset 2)))
+
 
 ;; Ruby config
 (require 'flymake-ruby)
@@ -122,7 +157,7 @@
 (add-hook 'feature-mode-hook
           '(lambda ()
              (setq feature-indent-level 4)
-             
+
              )
           )
 
